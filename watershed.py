@@ -6,6 +6,22 @@ import normalizeStaining
 
 from PIL import Image
 
+def CountBlackHoles( binImg ):
+    colorImg = cv2.cvtColor(binImg, cv2.COLOR_GRAY2BGR)
+    im2, cnts, hierchy = cv2.findContours( binImg.copy(), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE )
+
+    count = 0;
+    for c in cnts:
+        area = cv2.contourArea(c)
+        if area > binImg.size * 0.002:
+            count += 1
+            color = list(np.random.random(size=3) * 256)
+            cv2.drawContours(colorImg, [c], -1, color, 2)
+
+    print (count, "/", len(cnts))
+    cv2.imshow("contour", colorImg)
+    return
+
 
 def ImageWatershed(srcImageName, dstImageName, dstMarkName):
     img = cv2.imread(srcImageName)
@@ -23,7 +39,7 @@ def ImageWatershed(srcImageName, dstImageName, dstMarkName):
     dyabs = cv2.convertScaleAbs(dy)
     thresh1 = cv2.addWeighted(dxabs, 0.5, dyabs, 0.5, 0)
     #ret, thresh = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
-    thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV, 51, 31)
+    thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV, 501, 31)
 
    # thresh = cv2.addWeighted(thresh1, 0.25, thresh2, 0.75, 0)
 
@@ -49,7 +65,7 @@ def ImageWatershed(srcImageName, dstImageName, dstMarkName):
     dist_transform = cv2.distanceTransform(opening, cv2.DIST_L2, 3)
     cv2.imshow('dist_transform', dist_transform);
 
-    ret, sure_fg = cv2.threshold(dist_transform, 0.35*dist_transform.max(), 255, 0)
+    ret, sure_fg = cv2.threshold(dist_transform, 0.25*dist_transform.max(), 255, 0)
 
 
     cv2.imshow('foreground', sure_fg);
@@ -75,22 +91,24 @@ def ImageWatershed(srcImageName, dstImageName, dstMarkName):
    # bin_mask[markers == -1] = 255
     bin_mask[markers == 1] = 0
 #    bin_mask[bin_mask == -1] = 0;
-
+    bin_mask = bin_mask.astype(np.uint8)
     #print (bin_mask.shape )
 
     cv2.imshow('test', img);
     cv2.imshow('bin_mask', bin_mask);
     cv2.imwrite( dstMarkName, bin_mask);
 
-    cv2.waitKey(0);
+    CountBlackHoles(bin_mask)
+
+#    cv2.waitKey(0);
     cv2.imwrite(dstImageName, img);
     cv2.destroyAllWindows();
 
     return;
 
 
-#tif_dir = '../Tissue images/'
-tif_dir = '../bad/'
+tif_dir = '../Tissue images/'
+#tif_dir = '../bad/'
 result_dir = 'results/'
 
 tif_files = os.listdir(tif_dir);
