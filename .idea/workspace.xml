@@ -2,15 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5cd7f5f-7d14-49bd-8f38-d495fa0d59ab" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-18-5592-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-21-5784-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-21-5786-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-38-6178-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-49-4488-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-50-5931-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-A7-A13E-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-A7-A13F-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-AR-A1AK-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-AR-A1AS-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-AY-A8YK-01A-01-TS1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-B0-5698-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-B0-5710-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-B0-5711-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-CH-5767-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-DK-A2I6-01A-01-TS1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-E2-A14V-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-E2-A1B5-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-G2-A2EK-01A-02-TSB.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-G9-6336-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-G9-6348-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-G9-6356-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-G9-6362-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-G9-6363-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-HE-7128-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-HE-7129-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-HE-7130-01Z-00-DX1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-KB-A93J-01A-01-TS1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-NH-A8F7-01A-01-TS1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-RD-A8N9-01A-01-TS1.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Watershed.iml" afterPath="$PROJECT_DIR$/.idea/Watershed.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AddAnnotations.py" afterPath="$PROJECT_DIR$/AddAnnotations.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HandleCenter.py" afterPath="$PROJECT_DIR$/HandleCenter.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/normalizeStaining.py" afterPath="$PROJECT_DIR$/normalizeStaining.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/venv/Lib/__future__.py" afterPath="$PROJECT_DIR$/venv/Lib/__future__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/venv/Lib/_bootlocale.py" afterPath="$PROJECT_DIR$/venv/Lib/_bootlocale.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/venv/Lib/_collections_abc.py" afterPath="$PROJECT_DIR$/venv/Lib/_collections_abc.py" />
@@ -34,11 +65,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="watershed.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="watershed.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/watershed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+            <state relative-caret-position="350">
+              <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -46,12 +77,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ws.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ws.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="100">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,7 +114,7 @@
       <file leaf-file-name="HandleCenter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HandleCenter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
+            <state relative-caret-position="275">
               <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -83,7 +126,7 @@
       <file leaf-file-name="w2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/w2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1525">
+            <state relative-caret-position="534">
               <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
               <folding>
                 <element signature="e#355#392#0" expanded="true" />
@@ -158,8 +201,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -207,7 +250,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.watershed">
+  <component name="RunManager" selected="Python.test">
     <configuration default="false" name="watershed" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -221,23 +264,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Watershed" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/watershed.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="watershed2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Watershed" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/watershed2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -289,6 +315,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Watershed" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HandleCenter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Watershed" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -429,18 +472,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.watershed" />
-      <item index="1" class="java.lang.String" itemvalue="Python.watershed2" />
-      <item index="2" class="java.lang.String" itemvalue="Python.AddAnnotations" />
-      <item index="3" class="java.lang.String" itemvalue="Python.w2" />
-      <item index="4" class="java.lang.String" itemvalue="Python.HandleCenter" />
+      <item index="1" class="java.lang.String" itemvalue="Python.AddAnnotations" />
+      <item index="2" class="java.lang.String" itemvalue="Python.w2" />
+      <item index="3" class="java.lang.String" itemvalue="Python.HandleCenter" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.watershed" />
-        <item index="1" class="java.lang.String" itemvalue="Python.HandleCenter" />
-        <item index="2" class="java.lang.String" itemvalue="Python.w2" />
-        <item index="3" class="java.lang.String" itemvalue="Python.AddAnnotations" />
-        <item index="4" class="java.lang.String" itemvalue="Python.watershed2" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.watershed" />
+        <item index="2" class="java.lang.String" itemvalue="Python.HandleCenter" />
+        <item index="3" class="java.lang.String" itemvalue="Python.w2" />
+        <item index="4" class="java.lang.String" itemvalue="Python.AddAnnotations" />
       </list>
     </recent_temporary>
   </component>
@@ -469,7 +512,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3227223" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3227223" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -503,6 +546,66 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/watershed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2625">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/normalizeStaining.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding>
+            <element signature="e#65#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HandleCenter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/w2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1525">
+          <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
+          <folding>
+            <element signature="e#355#392#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AddAnnotations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/watershed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -735,9 +838,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HandleCenter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/w2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1525">
+        <state relative-caret-position="534">
           <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
           <folding>
             <element signature="e#355#392#0" expanded="true" />
@@ -755,31 +868,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HandleCenter.py">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/watershed.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+        <state relative-caret-position="100">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/ws.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        <state relative-caret-position="234">
+          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/watershed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
