@@ -1,224 +1,128 @@
 import numpy as np
-import cv2
-import os
-from matplotlib import pyplot as plt
-import normalizeStaining
+from collections import deque
 
-from PIL import Image
+# Implementation of:
+# Pierre Soille, Luc M. Vincent, "Determining watersheds in digital pictures via
+# flooding simulations", Proc. SPIE 1360, Visual Communications and Image Processing
+# '90: Fifth in a Series, (1 September 1990); doi: 10.1117/12.24211;
+# http://dx.doi.org/10.1117/12.24211
+class Watershed(object):
+   MASK = -2
+   WSHD = 0
+   INIT = -1
+   INQE = -3
 
-def CountBlackHoles( binImg ):
-    colorImg = cv2.cvtColor(binImg, cv2.COLOR_GRAY2BGR)
-    im2, cnts, hierchy = cv2.findContours( binImg.copy(), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE )
+   def __init__(self, levels = 256):
+      self.levels = levels
 
-    lstAreas = []
-    area_count = 0;
-    for c in cnts:
-        area = cv2.contourArea(c)
-        if area < binImg.size * 0.2:
-            area_count += 1
-            lstAreas.append(area)
-            color = list(np.random.random(size=3) * 256)
-            cv2.drawContours(colorImg, [c], -1, color, 2)
+   # Neighbour (coordinates of) pixels, including the given pixel.
+   def _get_neighbors(self, height, width, pixel):
+      return np.mgrid[
+         max(0, pixel[0] - 1):min(height, pixel[0] + 2),
+         max(0, pixel[1] - 1):min(width, pixel[1] + 2)
+      ].reshape(2, -1).T
 
-    arr = np.array(lstAreas)
-    area_std = np.std(arr)
-    print (area_std)
-    print (area_count, "/", len(cnts))
-    cv2.imshow("contour", colorImg)
-    return area_count, area_std
+   def apply(self, image):
+      current_label = 0
+      flag = False
+      fifo = deque()
 
+      height, width = image.shape
+      total = height * width
+      labels = np.full((height, width), self.INIT, np.int32)
 
-def ImageWatershed(srcImageName, dstImageName, dstMarkName):
-    img = cv2.imread(srcImageName)
+      reshaped_image = image.reshape(total)
+      # [y, x] pairs of pixel coordinates of the flattened image.
+      pixels = np.mgrid[0:height, 0:width].reshape(2, -1).T
+      # Coordinates of neighbour pixels for each pixel.
+      neighbours = np.array([self._get_neighbors(height, width, p) for p in pixels])
+      if len(neighbours.shape) == 3:
+         # Case where all pixels have the same number of neighbours.
+         neighbours = neighbours.reshape(height, width, -1, 2)
+      else:
+         # Case where pixels may have a different number of pixels.
+         neighbours = neighbours.reshape(height, width)
 
-    '''Color Normalization'''
-    img = img.astype('float32')
-    img = normalizeStaining.normalizeStaining(img)
+      indices = np.argsort(reshaped_image)
+      sorted_image = reshaped_image[indices]
+      sorted_pixels = pixels[indices]
 
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+      # self.levels evenly spaced steps from minimum to maximum.
+      levels = np.linspace(sorted_image[0], sorted_image[-1], self.levels)
+      level_indices = []
+      current_level = 0
 
-    ddepth = cv2.CV_32F
-    dx = cv2.Sobel(gray, ddepth, 1, 0)
-    dy = cv2.Sobel(gray, ddepth, 0, 1)
-    dxabs = cv2.convertScaleAbs(dx)
-    dyabs = cv2.convertScaleAbs(dy)
-    thresh1 = cv2.addWeighted(dxabs, 0.5, dyabs, 0.5, 0)
-    #ret, thresh = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
-    thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV, 501, 31)
+      # Get the indices that deleimit pixels with different values.
+      for i in xrange(total):
+         if sorted_image[i] > levels[current_level]:
+            # Skip levels until the next highest one is reached.
+            while sorted_image[i] > levels[current_level]: current_level += 1
+            level_indices.append(i)
+      level_indices.append(total)
 
-   # thresh = cv2.addWeighted(thresh1, 0.25, thresh2, 0.75, 0)
+      start_index = 0
+      for stop_index in level_indices:
+         # Mask all pixels at the current level.
+         for p in sorted_pixels[start_index:stop_index]:
+            labels[p[0], p[1]] = self.MASK
+            # Initialize queue with neighbours of existing basins at the current level.
+            for q in neighbours[p[0], p[1]]:
+               # p == q is ignored here because labels[p] < WSHD
+               if labels[q[0], q[1]] >= self.WSHD:
+                  labels[p[0], p[1]] = self.INQE
+                  fifo.append(p)
+                  break
 
-   # cv2.imshow('gray', gray)
-    cv2.imshow('binary', thresh)
+         # Extend basins.
+         while fifo:
+            p = fifo.popleft()
+            # Label p by inspecting neighbours.
+            for q in neighbours[p[0], p[1]]:
+               # Don't set lab_p in the outer loop because it may change.
+               lab_p = labels[p[0], p[1]]
+               lab_q = labels[q[0], q[1]]
+               if lab_q > 0:
+                  if lab_p == self.INQE or (lab_p == self.WSHD and flag):
+                     labels[p[0], p[1]] = lab_q
+                  elif lab_p > 0 and lab_p != lab_q:
+                     labels[p[0], p[1]] = self.WSHD
+                     flag = False
+               elif lab_q == self.WSHD:
+                  if lab_p == self.INQE:
+                     labels[p[0], p[1]] = self.WSHD
+                     flag = True
+               elif lab_q == self.MASK:
+                  labels[q[0], q[1]] = self.INQE
+                  fifo.append(q)
 
-#    cv2.imwrite('binary.png', thresh);
+         # Detect and process new minima at the current level.
+         for p in sorted_pixels[start_index:stop_index]:
+            # p is inside a new minimum. Create a new label.
+            if labels[p[0], p[1]] == self.MASK:
+               current_label += 1
+               fifo.append(p)
+               labels[p[0], p[1]] = current_label
+               while fifo:
+                  q = fifo.popleft()
+                  for r in neighbours[q[0], q[1]]:
+                     if labels[r[0], r[1]] == self.MASK:
+                        fifo.append(r)
+                        labels[r[0], r[1]] = current_label
 
-    # noise removal
-    kernel = np.ones((3, 3), np.uint8)
-    opening = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel, iterations=3)
+         start_index = stop_index
 
-    cv2.imshow('opening', opening);
-    #cv2.imwrite('opening.png', opening);
+      return labels
 
-    # sure background area
-    sure_bg = cv2.dilate(opening, kernel, iterations=3)
+if __name__ == "__main__":
+   import sys
+   from PIL import Image
+   import matplotlib.pyplot as plt
+   from scipy.misc import imsave
 
-    cv2.imshow("background", sure_bg);
-    #cv2.imwrite('bg.png', sure_bg);
-
-    # Finding sure foreground area
-    dist_transform = cv2.distanceTransform(opening, cv2.DIST_L2, 3)
-    cv2.imshow('dist_transform', dist_transform);
-
-    ret, sure_fg = cv2.threshold(dist_transform, 0.25*dist_transform.max(), 255, 0)
-
-
-    cv2.imshow('foreground', sure_fg);
-    #cv2.imwrite('fg.png', sure_fg);
-
-    # Finding unknown region
-    sure_fg = np.uint8(sure_fg)
-    unknown = cv2.subtract(sure_bg, sure_fg)
-
-    # Marker labelling
-    ret, markers = cv2.connectedComponents(sure_fg)
-
-    # Add one to all labels so that sure background is not 0, but 1
-    markers = markers+1
-
-    # Now, mark the region of unknown with zero
-    markers[unknown == 255] = 0
-
-    markers = cv2.watershed(img, markers)
-    img[markers == -1] = [255, 0, 0]
-
-    bin_mask = np.ones(markers.shape) * 255
-   # bin_mask[markers == -1] = 255
-    bin_mask[markers == 1] = 0
-#    bin_mask[bin_mask == -1] = 0;
-    bin_mask = bin_mask.astype(np.uint8)
-    #print (bin_mask.shape )
-
-    cv2.imshow('test', img);
-    cv2.imshow('bin_mask', bin_mask);
-    cv2.imwrite( dstMarkName, bin_mask);
-
-    count_holes, std_holes = CountBlackHoles(bin_mask)
-
-  #  cv2.waitKey(0);
-    cv2.imwrite(dstImageName, img);
-    cv2.destroyAllWindows();
-
-    return count_holes, std_holes;
-
-
-def ImageWatershed1(srcImageName, dstImageName, dstMarkName):
-    img = cv2.imread(srcImageName)
-
-    '''Color Normalization'''
- #   img = img.astype('float32')
-  #  img = normalizeStaining.normalizeStaining(img)
-
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-    ddepth = cv2.CV_32F
-    dx = cv2.Sobel(gray, ddepth, 1, 0)
-    dy = cv2.Sobel(gray, ddepth, 0, 1)
-    dxabs = cv2.convertScaleAbs(dx)
-    dyabs = cv2.convertScaleAbs(dy)
-    thresh1 = cv2.addWeighted(dxabs, 0.5, dyabs, 0.5, 0)
-    #ret, thresh = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
-    thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV, 501, 11)
-
-   # thresh = cv2.addWeighted(thresh1, 0.25, thresh2, 0.75, 0)
-
-   # cv2.imshow('gray', gray)
-    cv2.imshow('binary', thresh)
-
-#    cv2.imwrite('binary.png', thresh);
-
-    # noise removal
-    kernel = np.ones((3, 3), np.uint8)
-    opening = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel, iterations=3)
-
-    cv2.imshow('opening', opening);
-    #cv2.imwrite('opening.png', opening);
-
-    # sure background area
-    sure_bg = cv2.dilate(opening, kernel, iterations=3)
-
-    cv2.imshow("background", sure_bg);
-    #cv2.imwrite('bg.png', sure_bg);
-
-    # Finding sure foreground area
-    dist_transform = cv2.distanceTransform(opening, cv2.DIST_L2, 3)
-    cv2.imshow('dist_transform', dist_transform);
-
-    ret, sure_fg = cv2.threshold(dist_transform, 0.25*dist_transform.max(), 255, 0)
-
-
-    cv2.imshow('foreground', sure_fg);
-    #cv2.imwrite('fg.png', sure_fg);
-
-    # Finding unknown region
-    sure_fg = np.uint8(sure_fg)
-    unknown = cv2.subtract(sure_bg, sure_fg)
-
-    # Marker labelling
-    ret, markers = cv2.connectedComponents(sure_fg)
-
-    # Add one to all labels so that sure background is not 0, but 1
-    markers = markers+1
-
-    # Now, mark the region of unknown with zero
-    markers[unknown == 255] = 0
-
-    markers = cv2.watershed(img, markers)
-    img[markers == -1] = [255, 0, 0]
-
-    bin_mask = np.ones(markers.shape) * 255
-   # bin_mask[markers == -1] = 255
-    bin_mask[markers == 1] = 0
-#    bin_mask[bin_mask == -1] = 0;
-    bin_mask = bin_mask.astype(np.uint8)
-    #print (bin_mask.shape )
-
-    cv2.imshow('test', img);
-    cv2.imshow('bin_mask', bin_mask);
-    cv2.imwrite( dstMarkName, bin_mask);
-
-    count_holes, std_holes = CountBlackHoles(bin_mask)
-
-    cv2.waitKey(0);
-    cv2.imwrite(dstImageName, img);
-    cv2.destroyAllWindows();
-
-    return count_holes, std_holes;
-
-#tif_dir = '../Tissue images/'
-tif_dir = '../bad/'
-bad_dir = '../bad/'
-result_dir = 'results/'
-
-tif_files = os.listdir(tif_dir)
-count = 1
-for file in tif_files:
-    if not os.path.isdir(file):
-        tiffilename = tif_dir + file
-        resultFileName = result_dir + file[0:file.find('.tif')] + '.png'
-        maskFileName = result_dir+ file[0:file.find('.tif')] + '.png'
-        '''
-        count_holes, std_holes = ImageWatershed(tiffilename, resultFileName, maskFileName)
-        # copy src image file to bad dir
-        if count_holes < 140 or std_holes > 1800:
-            img = cv2.imread(tiffilename)
-            cv2.imwrite(bad_dir + str(count) + '.png',img)
-
-        count += 1
-        '''
-        count_holes, std_holes = ImageWatershed1(tiffilename, resultFileName, maskFileName)
-        count += 1
-
-
-
+   w = Watershed()
+   image = np.array(Image.open(sys.argv[1]))
+   labels = w.apply(image)
+   imsave('ws.png', labels)
+   # plt.imshow(labels, cmap='Paired', interpolation='nearest')
+   # plt.show()
 

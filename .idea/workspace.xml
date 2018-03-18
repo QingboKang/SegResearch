@@ -2,36 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5cd7f5f-7d14-49bd-8f38-d495fa0d59ab" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-18-5592-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-21-5784-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-21-5786-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-38-6178-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-49-4488-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-50-5931-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-A7-A13E-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-A7-A13F-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-AR-A1AK-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-AR-A1AS-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-AY-A8YK-01A-01-TS1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-B0-5698-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-B0-5710-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-B0-5711-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-CH-5767-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-DK-A2I6-01A-01-TS1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-E2-A14V-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-E2-A1B5-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-G2-A2EK-01A-02-TSB.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-G9-6336-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-G9-6348-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-G9-6356-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-G9-6362-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-G9-6363-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-HE-7128-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-HE-7129-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-HE-7130-01Z-00-DX1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-KB-A93J-01A-01-TS1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-NH-A8F7-01A-01-TS1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/results/mask_TCGA-RD-A8N9-01A-01-TS1.png" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/orig_contours.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/w3.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Watershed.iml" afterPath="$PROJECT_DIR$/.idea/Watershed.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
@@ -40,6 +12,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AddAnnotations.py" afterPath="$PROJECT_DIR$/AddAnnotations.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HandleCenter.py" afterPath="$PROJECT_DIR$/HandleCenter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Watershed.py" afterPath="$PROJECT_DIR$/Watershed.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/normalizeStaining.py" afterPath="$PROJECT_DIR$/normalizeStaining.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/venv/Lib/__future__.py" afterPath="$PROJECT_DIR$/venv/Lib/__future__.py" />
@@ -65,11 +38,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="watershed.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/watershed.py">
+      <file leaf-file-name="ws.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ws.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+            <state relative-caret-position="475">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testwatershed.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testwatershed.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5416">
+              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -77,12 +60,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ws.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ws.m">
+      <file leaf-file-name="Watershed.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Watershed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
-              <folding />
+            <state relative-caret-position="169">
+              <caret line="55" column="15" selection-start-line="55" selection-start-column="15" selection-end-line="55" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,8 +75,32 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="278">
+              <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="w3.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/w3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="11" column="67" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="orig_contours.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/orig_contours.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -126,7 +135,7 @@
       <file leaf-file-name="w2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/w2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
+            <state relative-caret-position="1525">
               <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
               <folding>
                 <element signature="e#355#392#0" expanded="true" />
@@ -166,7 +175,10 @@
         <option value="$PROJECT_DIR$/AddAnnotations.py" />
         <option value="$PROJECT_DIR$/HandleCenter.py" />
         <option value="$PROJECT_DIR$/watershed.py" />
+        <option value="$PROJECT_DIR$/orig_contours.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/Watershed.py" />
+        <option value="$PROJECT_DIR$/w3.py" />
       </list>
     </option>
   </component>
@@ -201,8 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -223,6 +233,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,10 +243,11 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\umroot\Documents\Research\Watershed" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\2018 winter\Research\nuclei\SegResearch" />
       <recent name="C:\Users\umroot\Documents\Research\Watershed" />
     </key>
   </component>
@@ -250,7 +263,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.w3">
     <configuration default="false" name="watershed" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -265,40 +278,6 @@
       <module name="Watershed" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/watershed.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="AddAnnotations" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Watershed" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AddAnnotations.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="w2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Watershed" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/w2.py" />
-      <option name="PARAMETERS" value="../Tissue images/TCGA-18-5592-01Z-00-DX1.tif" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
@@ -332,6 +311,40 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Watershed" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="orig_contours" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Watershed" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/orig_contours.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="w3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Watershed" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/w3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -472,18 +485,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.watershed" />
-      <item index="1" class="java.lang.String" itemvalue="Python.AddAnnotations" />
-      <item index="2" class="java.lang.String" itemvalue="Python.w2" />
-      <item index="3" class="java.lang.String" itemvalue="Python.HandleCenter" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test" />
+      <item index="1" class="java.lang.String" itemvalue="Python.HandleCenter" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.orig_contours" />
+      <item index="4" class="java.lang.String" itemvalue="Python.w3" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.watershed" />
-        <item index="2" class="java.lang.String" itemvalue="Python.HandleCenter" />
-        <item index="3" class="java.lang.String" itemvalue="Python.w2" />
-        <item index="4" class="java.lang.String" itemvalue="Python.AddAnnotations" />
+        <item index="0" class="java.lang.String" itemvalue="Python.w3" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.orig_contours" />
+        <item index="3" class="java.lang.String" itemvalue="Python.watershed" />
+        <item index="4" class="java.lang.String" itemvalue="Python.HandleCenter" />
       </list>
     </recent_temporary>
   </component>
@@ -504,15 +517,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12135417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3227223" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3227223" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -524,7 +538,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -541,12 +554,108 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/watershed.py">
+    <entry file="file://$PROJECT_DIR$/Watershed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ws.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Watershed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="24" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ws.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/orig_contours.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/normalizeStaining.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding>
+            <element signature="e#65#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HandleCenter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/w2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1525">
+          <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
+          <folding>
+            <element signature="e#355#392#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AddAnnotations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Watershed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2625">
           <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
@@ -606,7 +715,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/watershed.py">
+    <entry file="file://$PROJECT_DIR$/Watershed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -656,7 +765,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/watershed.py">
+    <entry file="file://$PROJECT_DIR$/Watershed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
@@ -696,7 +805,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/watershed.py">
+    <entry file="file://$PROJECT_DIR$/Watershed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -726,7 +835,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/watershed.py">
+    <entry file="file://$PROJECT_DIR$/Watershed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -756,7 +865,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/watershed.py">
+    <entry file="file://$PROJECT_DIR$/Watershed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -786,7 +895,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/watershed.py">
+    <entry file="file://$PROJECT_DIR$/Watershed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -806,7 +915,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/watershed.py">
+    <entry file="file://$PROJECT_DIR$/Watershed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -828,12 +937,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/watershed2.py" />
     <entry file="file://$PROJECT_DIR$/contour_only.py" />
-    <entry file="file://$PROJECT_DIR$/AddAnnotations.py">
+    <entry file="file://$PROJECT_DIR$/orig_contours.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="550">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/normalizeStaining.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding>
+            <element signature="e#65#96#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -850,7 +969,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/w2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
+        <state relative-caret-position="1525">
           <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
           <folding>
             <element signature="e#355#392#0" expanded="true" />
@@ -858,40 +977,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/normalizeStaining.py">
+    <entry file="file://$PROJECT_DIR$/AddAnnotations.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#65#96#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ws.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+        <state relative-caret-position="475">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/watershed.py">
+    <entry file="file://$PROJECT_DIR$/testwatershed.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+        <state relative-caret-position="-5416">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Watershed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="55" column="15" selection-start-line="55" selection-start-column="15" selection-end-line="55" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/w3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="67" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
