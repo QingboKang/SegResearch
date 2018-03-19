@@ -124,7 +124,7 @@ def ImageWatershed(srcImageName, dstImageName, dstMarkName):
     count_holes, std_holes = CountBlackHoles(bin_mask)
 
   #  cv2.waitKey(0);
-    cv2.imwrite(dstImageName, img);
+ #   cv2.imwrite(dstImageName, img);
     cv2.destroyAllWindows();
 
     return count_holes, std_holes;
@@ -207,14 +207,14 @@ def ImageWatershed1(srcImageName, dstImageName, dstMarkName):
 
     count_holes, std_holes = CountBlackHoles(bin_mask)
 
-    cv2.waitKey(0);
+    #cv2.waitKey(0);
     cv2.imwrite(dstImageName, img);
-    cv2.destroyAllWindows();
+    cv2.destroyAllWindows()
 
     return count_holes, std_holes;
 
-#tif_dir = '../Tissue images/'
-tif_dir = '../bad/'
+tif_dir = '../Tissue images/'
+# tif_dir = '../bad/'
 bad_dir = '../bad/'
 result_dir = 'results/'
 
@@ -224,8 +224,8 @@ for file in tif_files:
     if not os.path.isdir(file):
         tiffilename = tif_dir + file
         resultFileName = result_dir + file[0:file.find('.tif')] + '.png'
-        maskFileName = result_dir+ file[0:file.find('.tif')] + '.png'
-        '''
+        maskFileName = result_dir + file[0:file.find('.tif')] + '.png'
+
         count_holes, std_holes = ImageWatershed(tiffilename, resultFileName, maskFileName)
         # copy src image file to bad dir
         if count_holes < 140 or std_holes > 1800:
@@ -236,6 +236,7 @@ for file in tif_files:
         '''
         count_holes, std_holes = ImageWatershed1(tiffilename, resultFileName, maskFileName)
         count += 1
+        '''
 
 
 

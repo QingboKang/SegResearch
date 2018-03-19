@@ -26,7 +26,8 @@ def CountContoursStddev(binImg):
     return area_count, area_std, area_mean
 
 
-def ImageWatershed(gray, dstImageName, dstMarkName, blocksize, constant):
+def ImageWatershed(gray, dstImageName, dstMarkName, blocksize, constant, removal_size, open_iterations, \
+                   dilate_iterations, fThreshold):
     thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV, blocksize, constant)
 
     # noise removal
@@ -78,23 +79,36 @@ import sys
 import math
 optimal_result = -1000
 
+lstCounts = []
+lstMeans = []
 for size in block_size:
     for const in constants:
         count_holes, std_holes, mean_holes, bin_mask = ImageWatershed(gray, "", "", size, const)
+        lstCounts.append(count_holes)
+        lstMeans.append(mean_holes)
         result =  mean_holes - 0.25 * std_holes
        # print (str(count_holes), " - ", str(std_holes))
         if optimal_result < result:
             optimal_blocksize = size
             optimal_constant = const
             optimal_result = result
-            print (count_holes, " ", std_holes," ", mean_holes,)
+          #  print (count_holes, " ", std_holes," ", mean_holes,)
       #      print("optimal_blocksize: ", optimal_blocksize)
        #     print("optimal_constant: ", optimal_constant)
-            print (result)
+           # print (result)
             optimal_mask = bin_mask
 
-print ("optimal blocksize: ", optimal_blocksize)
-print ("optimal constant: ", optimal_constant)
-cv2.imshow("optimal mask", optimal_mask)
-cv2.waitKey(0)
+
+lstCounts = [round(i / 10) for i in lstCounts]
+lstCounts = sorted(lstCounts)
+tempset = set(lstCounts)
+for item in tempset:
+    print("%s: %s" % (item, lstCounts.count(item)))
+
+lstMeans = [round(i / 10) for i in lstMeans]
+lstMeans = sorted(lstMeans)
+tempset = set(lstMeans)
+for item in tempset:
+    print ("%s: %s" % (item, lstMeans.count(item)))
+#cv2.waitKey(0)
 
