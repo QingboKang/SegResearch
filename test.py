@@ -2,37 +2,17 @@ import numpy as np
 import cv2
 import os
 from matplotlib import pyplot as plt
+import evaluation
+import normalizeStaining
 
 
-def CountContoursStddev(binImg):
-    colorImg = cv2.cvtColor(binImg, cv2.COLOR_GRAY2BGR)
-    im2, cnts, hierchy = cv2.findContours( binImg.copy(), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE )
+def ImageWatershed(img, isNormalize, dstImageName, dstMarkName, blocksize, constant):
+    '''Color Normalization'''
+    if isNormalize == True:
+        img = img.astype('float32')
+        img = normalizeStaining.normalizeStaining(img)
 
-    lstAreas = []
-    area_count = 0;
-    for c in cnts:
-        area = cv2.contourArea(c)
-        if area < binImg.size * 0.001:
-            area_count += 1
-            lstAreas.append(area)
-            color = list(np.random.random(size=3) * 256)
-            cv2.drawContours(colorImg, [c], -1, color, 2)
-
-   # cv2.imshow("contours", colorImg)
-   # cv2.waitKey(0)
-    arr = np.array(lstAreas)
-    area_std = np.std(arr)
-    area_mean = np.mean(arr)
-    return area_count, area_std, area_mean
-
-    '''
-    removal_size: 3
-    open_iterations: 3
-    dilate_iterations: 3
-    fThreshold: 0.25
-    '''
-def ImageWatershed(gray, dstImageName, dstMarkName, blocksize, constant, removal_size, open_iterations, \
-                   dilate_iterations, fThreshold):
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV, blocksize, constant)
 
     # noise removal
@@ -44,7 +24,7 @@ def ImageWatershed(gray, dstImageName, dstMarkName, blocksize, constant, removal
 
     # Finding sure foreground area
     dist_transform = cv2.distanceTransform(opening, cv2.DIST_L2, 3)
-    ret, sure_fg = cv2.threshold(dist_transform, 0.25*dist_transform.max(), 255, 0)
+    ret, sure_fg = cv2.threshold(dist_transform, 0.28*dist_transform.max(), 255, 0)
 
     # Finding unknown region
     sure_fg = np.uint8(sure_fg)
@@ -66,51 +46,48 @@ def ImageWatershed(gray, dstImageName, dstMarkName, blocksize, constant, removal
     bin_mask[markers == 1] = 0
     bin_mask = bin_mask.astype(np.uint8)
 
-    count_holes, std_holes, mean_holes = CountContoursStddev(bin_mask)
+    ratio = evaluation.get_white_ratio(bin_mask)
+    area_count, area_mean, area_std = evaluation.count_contours_stddev(bin_mask)
+
+  #  print (str(constant), ": ", str(ratio), " ", str(area_count), " ", str(area_mean), " ", str(area_std))
 
     #cv2.imshow('binary', thresh);
-    return count_holes, std_holes, mean_holes, bin_mask
+    return bin_mask, ratio, area_count,  area_mean, area_std
 
 
-img = cv2.imread('../bad/29.png')
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+# tif_dir = '../Tissue images/'
+tif_dir = "../Tissue images/"
 
-block_size = range(11, 501, 50)
-constants = range(-20, 20, 10)
-removal_size = range(3, 11, 2)
-open_iterations = range(1, 5, 1)
-dilate_iterations = range(1, 5, 1)
-fThreshold = np.arange(0.1, 0.5, 0.02)
-
-import sys
-import math
-optimal_result = -1000
-
-lstCounts = []
-lstMeans = []
-for size in block_size:
-    for const in constants:
-        for removalSize in removal_size:
-            for open_times in open_iterations:
-                for dilate_times in dilate_iterations:
-                    for thres in fThreshold:
-                        count_holes, std_holes, mean_holes, bin_mask = ImageWatershed(gray, "", "", size, const, \
-                                    removalSize, open_times, dilate_times, thres)
-                        lstCounts.append(count_holes)
-                        lstMeans.append(mean_holes)
+result_dir = '../water/result_'
 
 
+const = range(-20, 51, 5)
+blocksizes = range(251, 653, 100)
+listIsNorm = [False, True]
 
-lstCounts = [round(i / 10) for i in lstCounts]
-lstCounts = sorted(lstCounts)
-tempset = set(lstCounts)
-for item in tempset:
-    print("%s: %s" % (item, lstCounts.count(item)))
+listRatio = []
+listCount = []
 
-lstMeans = [round(i / 10) for i in lstMeans]
-lstMeans = sorted(lstMeans)
-tempset = set(lstMeans)
-for item in tempset:
-    print ("%s: %s" % (item, lstMeans.count(item)))
-#cv2.waitKey(0)
+tif_files = os.listdir(tif_dir)
+count = 0
+maxNumberOfContours = 0
+for file in tif_files:
+    if not os.path.isdir(file):
+        maxNumberOfContours = 0
+        tiffilename = tif_dir + file
+        resultFileName = result_dir + file[0:file.find('.tif')] + '.png'
+
+        for size in blocksizes:
+            for c in const:
+                for bNorm in listIsNorm:
+                    img = cv2.imread(tiffilename)
+                    bin_mask, ratio, area_count, area_mean, area_std = ImageWatershed(img, bNorm, "", "", size, c)
+
+                    if ratio >= 0.15 and ratio < 0.4 and maxNumberOfContours < area_count:
+                     #   resultFileName = result_dir + file[0:file.find('.tif')] + "_" + str(count) + '.png'
+                        maxNumberOfContours = area_count
+                        cv2.imwrite(resultFileName, bin_mask)
+                        print(resultFileName, " ", str(ratio), " ", str(area_count), " ", str(bNorm), " ", str(size), " ", str(c))
+                        count += 1
+
 

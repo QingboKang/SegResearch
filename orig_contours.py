@@ -46,3 +46,6 @@ for i in range(1, 31, 1):
 #print (lstStd)
 lstWhiteRatios = sorted(lstWhiteRatios)
 print (lstWhiteRatios)
+
+lstMeans = sorted(lstMeans)
+print (lstMeans)

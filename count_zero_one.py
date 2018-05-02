@@ -1,28 +1,37 @@
 import numpy as np
 import cv2
 import os
+import evaluation
 
-maskimgsdir = "../Mask/"
-origimgsdir = "../Tissue images/"
+def doKMeans(imagepath, savepath):
+    img = cv2.imread(imagepath)
+    Z = img.reshape((-1, 3))
+    Z = np.float32(Z)
+    criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
+    K = 4
+    ret, label, center = cv2.kmeans(Z, K, None, criteria, 10, cv2.KMEANS_PP_CENTERS )
 
-lstMaskRatio = []
-lstOTSURatio = []
+    center = np.uint8(center)
+    center[0:3] = [0, 0, 0]
+    center[3] = [255, 255, 255]
 
-for i in range(1, 31, 1):
-    orig_img_path = origimgsdir + str(i) + ".tif"
-    mask_img_path = maskimgsdir + str(i) + ".png"
+    res = center[label.flatten()]
+    res2 = res.reshape((img.shape))
 
-    origImg = cv2.imread(orig_img_path)
-    origGray = cv2.cvtColor(origImg, cv2.COLOR_BGR2GRAY)
-    ret, thresh = cv2.threshold(origGray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-    origRatio = np.count_nonzero(thresh) / thresh.size
+    gray = cv2.cvtColor(res2, cv2.COLOR_BGR2GRAY)
 
-    maskImg = cv2.imread(mask_img_path)
-    maskGray = cv2.cvtColor(maskImg, cv2.COLOR_BGR2GRAY)
-    maskRatio = np.count_nonzero(maskGray) / maskGray.size
+    # noise removal
+    kernel = np.ones((5, 5), np.uint8)
 
-    print (origRatio, ' - ', maskRatio)
+    gray = cv2.medianBlur(gray, 5)
+
+    bin_img = cv2.morphologyEx(gray, cv2.MORPH_CLOSE, kernel, iterations=1)
+
+    cv2.imwrite(savepath, bin_img)
+    ratio = evaluation.get_white_ratio(bin_img)
+    area_count, area_mean, area_std = evaluation.count_contours_stddev(bin_img)
+
+    print (savepath, " ", str(ratio), " ", str(area_count), " ", str(area_mean), " ", str(area_std))
 
 
-print (lstMaskRatio)
-print (lstOTSURatio)
+doKMeans( "../Tissue images/4.tif", "k4.png" )

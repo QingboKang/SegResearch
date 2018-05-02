@@ -10,20 +10,21 @@ def get_white_ratio(binImg):
 
 def count_contours_stddev(binImg):
     colorImg = cv2.cvtColor(binImg, cv2.COLOR_GRAY2BGR)
-    im2, cnts, hierchy = cv2.findContours( binImg.copy(), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE )
+    im2, cnts, hierchy = cv2.findContours( binImg.copy(), cv2.RETR_CCOMP , cv2.CHAIN_APPROX_NONE  )
 
     lstAreas = []
     area_count = 0;
     for c in cnts:
         area = cv2.contourArea(c)
-        if area < binImg.size * 0.001:
+        if area < 10000 and area > 100:
             area_count += 1
             lstAreas.append(area)
             color = list(np.random.random(size=3) * 256)
             cv2.drawContours(colorImg, [c], -1, color, 2)
 
-   # cv2.imshow("contours", colorImg)
-   # cv2.waitKey(0)
+ #   print ("area_count: ", area_count)
+ #   cv2.imshow("contours", colorImg)
+ #   cv2.waitKey(0)
     arr = np.array(lstAreas)
     area_mean = np.mean(arr)
     area_std = np.std(arr)
