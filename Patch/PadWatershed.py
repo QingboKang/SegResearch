@@ -17,7 +17,7 @@ tif_files = os.listdir(img_dir)
 for file in tif_files:
     if not os.path.isdir(file):
         tiffilename = img_dir + file
-        savefilename = save_dir + file[0:file.find('.tif')] + '.png'
+        savefilename = save_dir + file[0:file.find('.png')] + '.png'
 
         orig_image = cv2.imread(tiffilename)
         [height, width, channels] = orig_image.shape

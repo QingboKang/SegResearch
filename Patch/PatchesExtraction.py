@@ -22,7 +22,7 @@ def patch(orig_image, ws_image, image_index, mask_image, orig_patches_savedir, w
             patch_ws_image = ws_image[start_y: end_y, start_x: end_x]
 
             # corresponding label
-            pix_value = mask_image[start_x, start_y]
+            pix_value = mask_image[i, j]
             if np.all(pix_value == 0):
                 label = 0
             else:
