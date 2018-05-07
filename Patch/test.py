@@ -3,7 +3,7 @@ import cv2
 import os
 import random
 
-image_index = 10
+image_index = 30
 orig_image_dir = "../../Tissue images pad/"
 watershed_image_dir = "../../water pad/result_"
 mask_image_dir = "../../Mask/"
