@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec902427-7ecd-46af-8092-41a200682ed9" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/Patch/random_patch_generation.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Patch/test.py" afterPath="$PROJECT_DIR$/Patch/test.py" />
+      <change beforePath="$PROJECT_DIR$/Patch/test.py" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +24,8 @@
       <file leaf-file-name="PadWatershed.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Patch/PadWatershed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="207">
+              <caret line="9" column="87" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="87" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -54,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Patch/test.py">
+      <file leaf-file-name="random_patch_generation.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Patch/random_patch_generation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="42" column="24" lean-forward="true" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+            <state relative-caret-position="184">
+              <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -69,8 +70,8 @@
       <file leaf-file-name="PatchesExtraction.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Patch/PatchesExtraction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="322">
+              <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -170,8 +171,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-212" />
-    <option name="y" value="-18" />
+    <option name="x" value="1816" />
+    <option name="y" value="-12" />
     <option name="width" value="1920" />
     <option name="height" value="1030" />
   </component>
@@ -306,7 +307,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="SegResearch" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Patch/test.py" />
+      <option name="SCRIPT_NAME" value="H:\2018 winter\Research\nuclei\SegResearch-master\Patch\random_patch_generation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -381,7 +382,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="1911" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -759,34 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Patch/PadOriginal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Patch/PatchesExtraction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Patch/PadWatershed.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cell_segmentation/train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -797,10 +770,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Patch/test.py">
+    <entry file="file://$PROJECT_DIR$/Patch/PadOriginal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="42" column="24" lean-forward="true" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Patch/PadWatershed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="87" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="87" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Patch/PatchesExtraction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Patch/random_patch_generation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
